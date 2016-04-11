@@ -1,0 +1,48 @@
+/* ------- nav ------- */
+nav ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li
+{
+    flex: 1;
+}
+
+nav a
+{
+    display: block;
+
+    border: 0.5rem solid #E80000;
+
+    background: #E80000;
+    text-align: center;
+
+    color: #000000;
+    text-decoration:none;
+
+    font-weight: bold;
+}
+
+nav a.button
+{
+    border: 2px outset #000000;
+    padding: 2px 35px;
+    background-color: #E80000;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+nav a:hover
+{
+    text-decoration:underline;
+    background-color: #000000;
+    color: #E80000;
+}
