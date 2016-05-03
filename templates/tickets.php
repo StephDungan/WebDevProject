@@ -6,11 +6,12 @@
  * Time: 11:37
  */
 
-require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
+require_once __DIR__ . '/../templates/header1.inc.php';
+require_once __DIR__ . '/../templates/nav.inc.php';
 
 ?>
 
-<form action="/../WebDevProject/templates/basket.php" method="post">
+<form action="form.php" method="get">
     <table>
 
         <tr>
