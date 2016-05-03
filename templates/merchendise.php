@@ -6,15 +6,14 @@
  * Time: 11:37
  */
 
-require_once __DIR__ . '/../templates/header1.inc.php';
-require_once __DIR__ . '/../templates/nav.inc.php';
+require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 ?>
 
 
-<form action="form.php" method="get">
+<form action="/../WebDevProject/templates/basket.php" method="post">
 Match Day Programs
 <br>
-<img src="../public/images/program.jpg" height="165" width="117">
+<img src="/../WebDevProject/public/images/program.jpg" height="165" width="117">
     <br><br>
 Match:
 <select name="Opponents">
@@ -137,4 +136,4 @@ Season Ticket:
 </form>
 
 <?php
-require_once  __DIR__. '/../templates/footer.inc.php';
+require_once  __DIR__. '/../../WebDevProject/templates/footer.inc.php';

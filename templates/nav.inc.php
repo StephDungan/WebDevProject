@@ -12,23 +12,23 @@
 <nav>
     <ul>
         <li>
-            <a href="index.php" class="button">Home</a>
+            <a href="/../WebDevProject/templates/index.php" class="button">Home</a>
         </li>
 
         <li>
-            <a href="kits.php" class="button">Kits</a>
+            <a href="/../WebDevProject/templates/kits.php" class="button">Kits</a>
         </li>
 
         <li>
-            <a href="tickets.php" class="button">Tickets</a>
+            <a href="/../WebDevProject/templates/tickets.php" class="button">Tickets</a>
         </li>
 
         <li>
-            <a href="merchendise.php" class="button">Merchendise</a>
+            <a href="/../WebDevProject/templates/merchendise.php" class="button">Merchendise</a>
         </li>
 
         <li>
-            <a href="login.php" class="button">Login</a>
+            <a href="/../WebDevProject/templates/login.php" class="button">Login</a>
         </li>
     </ul>
 </nav>
