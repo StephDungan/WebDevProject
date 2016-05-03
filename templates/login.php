@@ -11,7 +11,7 @@ require_once __DIR__ . '/../templates/nav.inc.php';
 ?>
     <fieldset>
         <legend> Login </legend>
-            <form action="/../WebDevProject/public/index.php?action=processLogin" method="post">
+            <form action="../public/index.php?action=processLogin" method="post">
                 Customer ID :
                 <input type="text" name="username">
                 <br><br>

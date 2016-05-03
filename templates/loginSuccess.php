@@ -12,7 +12,3 @@ require_once __DIR__ . '/../templates/nav.inc.php';
 ?>
 
 <h1>successful login</h1>
-
-<?php
-
-require_once  __DIR__ . '/../templates/footer.inc.php';
