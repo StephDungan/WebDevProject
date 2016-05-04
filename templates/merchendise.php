@@ -6,18 +6,17 @@
  * Time: 11:37
  */
 
-$Opponents = $progQTY = $memType = $memQTY  =
-    $seaType =  $seaQTYA = $seaQTYS = $seaQTYC ="";
-require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
+require_once __DIR__ . '/../templates/header1.inc.php';
+require_once __DIR__ . '/../templates/nav.inc.php';
 ?>
 
-<form action="/../WebDevProject/templates/basketMerch.php" method="post">
+
+<form action="form.php" method="get">
 Match Day Programs
 <br>
-<img src="/../WebDevProject/public/images/program.jpg" height="165" width="117">
+<img src="../public/images/program.jpg" height="165" width="117">
     <br><br>
 Match:
-    <br>
 <select name="Opponents">
     <option value="none"> Please select a match</option>
     <option value="SlR1"> Sligo Rovers 1 </option>
@@ -39,58 +38,103 @@ Match:
 </select>
     
     <select name="progQTY">
-        <option value="progQTY0"> -- </option>
-        <option value="progQTY1"> 1 </option>
-        <option value="progQTY2"> 2 </option>
-        <option value="progQTY3"> 3 </option>
-        <option value="progQTY4"> 4 </option>
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
     </select>
 <br><br>
 
 Membership:
     <br>
-
-    <select name="memType">
-        <option value="mem--"> -- </option>
-        <option value="memAdult"> Adult </option>
-        <option value="memStudent"> Student </option>
-        <option value="memChild"> Child </option>
-    </select>
+    <label>
+        <input type="radio" name="memType" value="adult">
+        Adult
+    </label>
 
     <select name="memQTY">
-        <option value="memQTY0"> -- </option>
-        <option value="memQTY1"> 1 </option>
-        <option value="memQTY2"> 2 </option>
-        <option value="memQTY3"> 3 </option>
-        <option value="memQTY4"> 4 </option>
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+    </select>
+
+    <label>
+        <input type="radio" name="memType" value="student">
+        Student/OAP
+    </label>
+
+    <select name="memQTY">
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+    </select>
+
+    <label>
+        <input type="radio" name="memType" value="child">
+        Child
+    </label>
+
+    <select name="memQTY">
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
     </select>
 
 <br><br>
 
 Season Ticket:
     <br>
-
-    <select name="seaType">
-        <option value="sea--"> -- </option>
-        <option value="seaAdult"> Adult </option>
-        <option value="seaStudent"> Student </option>
-        <option value="seaChild"> Child </option>
-    </select>
+    <label>
+        <input type="radio" name="seaType" value="adult">
+        Adult
+    </label>
 
     <select name="seaQTY">
-        <option value="seaQTY0"> -- </option>
-        <option value="seaQTY1"> 1 </option>
-        <option value="seaQTY2"> 2 </option>
-        <option value="seaQTY3"> 3 </option>
-        <option value="seaQTY4"> 4 </option>
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+    </select>
+
+    <label>
+        <input type="radio" name="seaType" value="student">
+        Student/OAP
+    </label>
+
+    <select name="seaQTY">
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+    </select>
+
+    <label>
+        <input type="radio" name="seaType" value="child">
+        Child
+    </label>
+
+    <select name="seaQTY">
+        <option value="0"> 0 </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
     </select>
 
     <br><br>
-
 
     <input type="submit" value="Add to Basket">
 
 </form>
 
 <?php
-require_once  __DIR__. '/../../WebDevProject/templates/footer.inc.php';
+require_once  __DIR__. '/../templates/footer.inc.php';

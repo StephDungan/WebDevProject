@@ -6,8 +6,9 @@
  * Time: 11:37
  */
 
-require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
+require_once __DIR__ . '/../templates/header1.inc.php';
+require_once __DIR__ . '/../templates/nav.inc.php';
 
 ?>
 
-<h1>successful login <?php echo $_POST["username"]?> </h1>
+<h1>successful login</h1>
