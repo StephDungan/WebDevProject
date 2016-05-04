@@ -11,31 +11,37 @@ namespace Itb;
 function kitsAction()
 {
     $pageTitle = 'KITS';
-    require_once __DIR__ . '/../templates/kits.php';
+    require_once __DIR__ . '/../../WebDevProject/templates/kits.php';
 }
 
 function ticketsAction()
 {
     $pageTitle = 'TICKETS';
-    require_once __DIR__. '/../templates/tickets.php';
+    require_once __DIR__. '/../../WebDevProject/templates/tickets.php';
 }
 
 function merchendiseAction()
 {
     $pageTitle = 'MERCHENDISE';
-    require_once  __DIR__. '/../templates/merchendise.php';
+    require_once  __DIR__. '/../../WebDevProject/templates/merchendise.php';
 }
 
 function loginAction()
 {
     $pageTitle = 'LOGIN';
-    require_once  __DIR__. '/../templates/login.php';
+    require_once  __DIR__. '/../../WebDevProject/templates/login.php';
 }
 
 function indexAction()
 {
     $pageTitle = 'HOME';
-    require_once  __DIR__. '/../templates/index.php';
+    require_once  __DIR__. '/../../WebDevProject/templates/index.php';
+}
+
+function submitAction()
+{
+    $pageTitle = 'BASKET';
+    require_once __DIR__ . '/../../WebDevProject/templates/basket.php';
 }
 
 class MainController
@@ -54,6 +60,11 @@ class MainController
         $username = $this->usernameFromSession();
         
         require_once __DIR__ . '/../../WebDevProject/templates/login.php';
+    }
+
+    public function submitAction()
+    {
+        $submitPressed = $this->hadSubmitted();
     }
     
     public function logoutAction()
@@ -74,6 +85,9 @@ class MainController
         if(('admin' == $username) & ('admin' == $password))
         {
             $isLoggedIn = true;
+        }elseif (('Steph' == $username) &('bohs' == $password))
+        {
+            $isLoggedIn = true;
         }
 
         // action depending on login success
@@ -81,11 +95,23 @@ class MainController
             
             $_SESSION['user'] = $username;
             // success - found a matching username and password
-            require_once __DIR__ . '/../templates/loginSuccess.php';
+            require_once __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
         } else {
-            $message = 'bad username or password, please try again';
-            require_once __DIR__ . '/../templates/message.php';
+            require_once __DIR__ . '/../../WebDevProject/templates/login.php';
         }
+    }
+
+    public function processSubmitAction()
+    {
+        $submitPressed = true;
+
+        if ($submitPressed = true)
+        {
+            require_once __DIR__ . '/../../WebDevProject/templates/basket.php';
+        } else {
+            require_once __DIR__ . '/../../WebDevProject/templates/index.php';
+        }
+
     }
 
     public function killSession()
@@ -125,7 +151,7 @@ class MainController
         print "<p>Counter (number of page hits): $pageHits";
         print '<p>session = ' . session_id();
         print '<hr><a href="/">revist this home page again</a> ';
-        print '<hr><a href="/index.php?action=restartSession">restart session</a> ';
+        print '<hr><a href="/../WebDevProject/public/index.php?action=restartSession">restart session</a> ';
 
     }
     
