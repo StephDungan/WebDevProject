@@ -5,6 +5,26 @@
  * Date: 19/04/2016
  * Time: 13:13
  */
+
+if (empty($indexLinkStyle)){
+    $indexLinkStyle = '';
+}
+
+if (empty($kitsLinkStyle)){
+    $kitsLinkStyle = '';
+}
+
+if (empty($loginLinkStyle)){
+    $loginLinkStyle = '';
+}
+
+if (empty($merchendiseLinkStyle)){
+    $merchendiseLinkStyle = '';
+}
+
+if (empty($ticketsLinkStyle)){
+    $ticketsLinkStyle = '';
+}
 ?>
 
 
@@ -12,23 +32,23 @@
 <nav>
     <ul>
         <li>
-            <a href="/../WebDevProject/templates/index.php" class="button">Home</a>
+            <a href="/../WebDevProject/templates/index.php" class="<?= $indexLinkStyle ?>">Home</a>
         </li>
 
         <li>
-            <a href="/../WebDevProject/templates/kits.php" class="button">Kits</a>
+            <a href="/../WebDevProject/templates/kits.php" class="<?= $kitsLinkStyle ?>">Kits</a>
         </li>
 
         <li>
-            <a href="/../WebDevProject/templates/tickets.php" class="button">Tickets</a>
+            <a href="/../WebDevProject/templates/tickets.php" class="<?= $ticketsLinkStyle ?>">Tickets</a>
         </li>
 
         <li>
-            <a href="/../WebDevProject/templates/merchendise.php" class="button">Merchendise</a>
+            <a href="/templates/merchandise.php" class="<?= $merchendiseLinkStyle ?>">Merchendise</a>
         </li>
 
         <li>
-            <a href="/../WebDevProject/templates/login.php" class="button">Login</a>
+            <a href="/../WebDevProject/templates/login.php" class="<?= $loginLinkStyle ?>">Login</a>
         </li>
     </ul>
 </nav>

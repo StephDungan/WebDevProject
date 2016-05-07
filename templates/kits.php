@@ -9,7 +9,7 @@
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 
 $gender00 = $gender01 = $size00 = $size01 = $gender10 = $gender11
-    = $size10 = $HorA = $SockSH = "";
+    = $size10 = $HorA = $SockSH = $kits = "";
 
 function test_input($data)
 {
@@ -24,12 +24,16 @@ function test_input($data)
     <table>
         <tr>
             <th> HOME </th>
+            <th>      </th>
             <th> AWAY </th>
 
         </tr>
 
         <tr>
             <td><img src="/../WebDevProject/public/images/homeShirt.jpg" height="170" width="170" ></td>
+
+            <td></td>
+
             <td><img src="/../WebDevProject/public/images/awayShirt.jpg" height="170" width="170"></td>
         </tr>
 
@@ -41,6 +45,8 @@ function test_input($data)
                     <option value="FemaleHome00"> Female </option>
                 </select>
             </td>
+
+            <td></td>
             
             <td>Gender:
                 <select name="gender01">
@@ -61,7 +67,10 @@ function test_input($data)
                     <option value="large00">Large</option>
                 </select>
             </td>
-            
+
+            <td></td>
+
+
             <td>
                 Size:
                 <select name="size01">
@@ -74,6 +83,9 @@ function test_input($data)
         </tr>
         <tr>
             <td><img src="/../WebDevProject/public/images/homeShorts.jpg" height="170" width="170" ></td>
+
+            <td></td>
+
             <td><img src="/../WebDevProject/public/images/awayShorts.jpg" height="170" width="170"></td>
         </tr>
 
@@ -85,6 +97,9 @@ function test_input($data)
                     <option value="FemaleHome10"> Female </option>
                 </select>
             </td>
+
+            <td></td>
+
 
             <td>Gender:
                 <select name="gender11">
@@ -106,6 +121,9 @@ function test_input($data)
                 </select>
             </td>
 
+            <td></td>
+
+
             <td>
                 Size:
                 <select name="size11">
@@ -118,12 +136,18 @@ function test_input($data)
         </tr>
 
         <tr>
+
+            <td></td>
+
             <td><img src="/../WebDevProject/public/images/homeSocks.jpg" height="170" width="170" ></td>
 
             <td></td>
         </tr>
         
         <tr>
+
+            <td></td>
+
             <td>
                 <select name="HorA">
                     <option value="SockHome"> Home </option>
@@ -135,6 +159,9 @@ function test_input($data)
         </tr>
 
         <tr>
+
+            <td></td>
+
             <td>
                 Size:
                 <select name="sizeSH">
@@ -154,8 +181,34 @@ function test_input($data)
 
     <br><br>
 
-    <input type="submit" name="Add to Basket">
+    <input type="submit" name="Add to Basket" align="center">
 </form>
+
+    <table>
+
+        <tr>
+            <th> HOME </th>
+            <th>      </th>
+            <th> AWAY </th>
+        </tr>
+
+        <?php
+            foreach ($kits as $kit)
+            {
+        ?>
+
+            <tr>
+                <td><?= $kit['home'] ?></td>
+                <td><?= $kit['neutral'] ?></td>
+                <td><?= $kit['away'] ?></td>
+            </tr>
+
+        <?php
+
+            }
+        ?>
+
+    </table>
 
 <?php
 

@@ -11,24 +11,37 @@ namespace Itb;
 function kitsAction()
 {
     $pageTitle = 'KITS';
+    $kitsLinkStyle = 'current_page';
+
+    $kits = [];
+    $kits[] = [ 'home' => 'hello',
+                'neutral' => 'goodbye',
+                'away' => 'farewell'];
+
     require_once __DIR__ . '/../../WebDevProject/templates/kits.php';
 }
 
 function ticketsAction()
 {
     $pageTitle = 'TICKETS';
+    $listLinkStyle = 'current_page';
+
     require_once __DIR__. '/../../WebDevProject/templates/tickets.php';
 }
 
-function merchendiseAction()
+function merchandiseAction()
 {
-    $pageTitle = 'MERCHENDISE';
-    require_once  __DIR__. '/../../WebDevProject/templates/merchendise.php';
+    $pageTitle = 'MERCHANDISE';
+    $listLinkStyle = 'current_page';
+
+    require_once  __DIR__. '/../../WebDevProject/templates/merchandise.php';
 }
 
 function loginAction()
 {
     $pageTitle = 'LOGIN';
+    $listLinkStyle = 'current_page';
+
     require_once  __DIR__. '/../../WebDevProject/templates/login.php';
 }
 
@@ -41,6 +54,8 @@ function indexAction()
 function submitAction()
 {
     $pageTitle = 'BASKET';
+    $listLinkStyle = 'current_page';
+
     require_once __DIR__ . '/../../WebDevProject/templates/basket.php';
 }
 
@@ -74,6 +89,9 @@ class MainController
         $this->indexAction();
     }
 
+    /**
+     *
+     */
     public function processLoginAction()
     {
         // default is bad login
@@ -82,23 +100,27 @@ class MainController
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-        if(('admin' == $username) & ('admin' == $password))
-        {
-            $isLoggedIn = true;
-        }elseif (('Steph' == $username) &('bohs' == $password))
-        {
-            $isLoggedIn = true;
-        }
+       if(('admin' == $username) & ('admin' == $password))
+       {
+           $isLoggedIn = true;
+       }elseif (('Steph' == $username) &('bohs' == $password))
+       {
+         $isLoggedIn = true;
+       }
+        
+       // $userR = new UserRepository();
+        //$isLoggedIn = $userR->canFindMatchingUsernameAndPassword($username, $password);
 
         // action depending on login success
-        if($isLoggedIn = true){
+        //if($isLoggedIn = true)
+       // if($isLoggedIn){
             
-            $_SESSION['user'] = $username;
+       //     $_SESSION['user'] = $username;
             // success - found a matching username and password
-            require_once __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
-        } else {
-            require_once __DIR__ . '/../../WebDevProject/templates/login.php';
-        }
+       //     require_once __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
+       // } else {
+        //    require_once __DIR__ . '/../../WebDevProject/templates/login.php';
+        //}
     }
 
     public function processSubmitAction()
