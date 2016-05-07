@@ -13,18 +13,13 @@ function kitsAction()
     $pageTitle = 'KITS';
     $kitsLinkStyle = 'current_page';
 
-    $kits = [];
-    $kits[] = [ 'home' => 'hello',
-                'neutral' => 'goodbye',
-                'away' => 'farewell'];
-
     require_once __DIR__ . '/../../WebDevProject/templates/kits.php';
 }
 
 function ticketsAction()
 {
     $pageTitle = 'TICKETS';
-    $listLinkStyle = 'current_page';
+    $ticketLinkStyle = 'current_page';
 
     require_once __DIR__. '/../../WebDevProject/templates/tickets.php';
 }
@@ -32,7 +27,7 @@ function ticketsAction()
 function merchandiseAction()
 {
     $pageTitle = 'MERCHANDISE';
-    $listLinkStyle = 'current_page';
+    $merchandiseLinkStyle = 'current_page';
 
     require_once  __DIR__. '/../../WebDevProject/templates/merchandise.php';
 }
@@ -40,7 +35,7 @@ function merchandiseAction()
 function loginAction()
 {
     $pageTitle = 'LOGIN';
-    $listLinkStyle = 'current_page';
+    $loginLinkStyle = 'current_page';
 
     require_once  __DIR__. '/../../WebDevProject/templates/login.php';
 }
@@ -48,6 +43,8 @@ function loginAction()
 function indexAction()
 {
     $pageTitle = 'HOME';
+    $indexLinkStyle = 'current_page';
+        
     require_once  __DIR__. '/../../WebDevProject/templates/index.php';
 }
 
@@ -65,33 +62,18 @@ class MainController
     {
         $isLoggedIn = $this->isLoggedInFromSession();
         $username = $this->usernameFromSession();
-        
+
         require_once __DIR__ . '/../templates/index.php';
     }
-    
+
     public function loginAction()
     {
         $isLoggedIn = $this->isLoggedInFromSession();
         $username = $this->usernameFromSession();
-        
+
         require_once __DIR__ . '/../../WebDevProject/templates/login.php';
     }
 
-    public function submitAction()
-    {
-        $submitPressed = $this->hadSubmitted();
-    }
-    
-    public function logoutAction()
-    {
-        unset($_SESSION['user']);
-        
-        $this->indexAction();
-    }
-
-    /**
-     *
-     */
     public function processLoginAction()
     {
         // default is bad login
@@ -100,40 +82,29 @@ class MainController
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-       if(('admin' == $username) & ('admin' == $password))
-       {
-           $isLoggedIn = true;
-       }elseif (('Steph' == $username) &('bohs' == $password))
-       {
-         $isLoggedIn = true;
-       }
-        
-       // $userR = new UserRepository();
+        // search for user with username in repository
+        //$userR = new UserR();
         //$isLoggedIn = $userR->canFindMatchingUsernameAndPassword($username, $password);
 
-        // action depending on login success
-        //if($isLoggedIn = true)
-       // if($isLoggedIn){
-            
-       //     $_SESSION['user'] = $username;
-            // success - found a matching username and password
-       //     require_once __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
-       // } else {
-        //    require_once __DIR__ . '/../../WebDevProject/templates/login.php';
-        //}
-    }
-
-    public function processSubmitAction()
-    {
-        $submitPressed = true;
-
-        if ($submitPressed = true)
+        if(('admin' == $username) && ('admin' == $password))
         {
-            require_once __DIR__ . '/../../WebDevProject/templates/basket.php';
-        } else {
-            require_once __DIR__ . '/../../WebDevProject/templates/index.php';
+            $isLoggedIn = true;
+        }elseif (('Steph' == $username) && ('bohs' == $password))
+        {
+            $isLoggedIn = true;
         }
 
+        // action depending on login success
+        if($isLoggedIn == true){
+            // success - found a matching username and password
+            if($username == 'admin'){
+                require_once __DIR__ . '/../../WebDevProject/templates/admin.php';
+            } else {
+                require_once __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
+            }
+        } else {
+            require_once __DIR__ . '/../../WebDevProject/templates/login.php';
+        }
     }
 
     public function killSession()
@@ -170,34 +141,35 @@ class MainController
         $pageHits++;
         $_SESSION['counter']=$pageHits;
 
-        print "<p>Counter (number of page hits): $pageHits";
-        print '<p>session = ' . session_id();
-        print '<hr><a href="/">revist this home page again</a> ';
-        print '<hr><a href="/../WebDevProject/public/index.php?action=restartSession">restart session</a> ';
+
+            print "<p>Counter (number of page hits): $pageHits";
+
 
     }
-    
+
     public function isLoggedInFromSession()
     {
         $isLoggedIn = false;
-        
+
         if (isset($_SESSION['user'])){
             $isLoggedIn = true;
         }
-        
+
         return $isLoggedIn;
     }
-    
+
     public function usernameFromSession()
     {
         $username = '';
-        
+
         if (isset($_SESSION['user'])){
             $username = $_SESSION['user'];
         }
-        
+
         return $username;
     }
+
+
 }
 
 

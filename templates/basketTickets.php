@@ -10,6 +10,8 @@ require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 
 ?>
 
+<div class="main">
+
 <h1>Basket</h1>
 
 <?php
@@ -571,6 +573,10 @@ if ($_POST["DD2C"] == "DD2C1"){
     echo " Dundalk - 21/10/2016 - Child x 4"; ?> <br> <?php
 } else{
 }
+    
+    ?>
+    
+    </div>
 
 
 

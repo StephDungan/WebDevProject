@@ -18,8 +18,8 @@ if (empty($loginLinkStyle)){
     $loginLinkStyle = '';
 }
 
-if (empty($merchendiseLinkStyle)){
-    $merchendiseLinkStyle = '';
+if (empty($merchandiseLinkStyle)){
+    $merchandiseLinkStyle = '';
 }
 
 if (empty($ticketsLinkStyle)){
@@ -44,7 +44,7 @@ if (empty($ticketsLinkStyle)){
         </li>
 
         <li>
-            <a href="/templates/merchandise.php" class="<?= $merchendiseLinkStyle ?>">Merchendise</a>
+            <a href="/../WebDevProject/templates/merchandise.php" class="<?= $merchandiseLinkStyle ?>">Merchandise</a>
         </li>
 
         <li>

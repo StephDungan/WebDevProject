@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Steph
- * Date: 06/05/2016
- * Time: 16:44
- */
-
 namespace Itb;
 
 class User
@@ -14,35 +7,58 @@ class User
     private $username;
     private $password;
 
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * @param mixed $id
+     */
     public function setId($id)
     {
         $this->id = $id;
     }
 
+    /**
+     * @return mixed
+     */
     public function getUsername()
     {
         return $this->username;
     }
 
+    /**
+     * @param mixed $username
+     */
     public function setUsername($username)
     {
         $this->username = $username;
     }
 
+    /**
+     * @return mixed
+     */
     public function getPassword()
     {
         return $this->password;
     }
 
+
+    /**
+     * hash the password before storing ...
+     * @param mixed $password
+     */
     public function setPassword($password)
     {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        
+
         $this->password = $hashedPassword;
     }
+
+
+
 }
