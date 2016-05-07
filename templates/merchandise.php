@@ -10,6 +10,7 @@ $Opponents = $progQTY = $memType = $memQTY  =
     $seaType =  $seaQTYA = $seaQTYS = $seaQTYC ="";
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 ?>
+    <div class="main">
 
 <form action="/../WebDevProject/templates/basketMerch.php" method="post">
 Match Day Programs
@@ -92,5 +93,6 @@ Season Ticket:
 
 </form>
 
+        </div>
 <?php
 require_once  __DIR__. '/../../WebDevProject/templates/footer.inc.php';

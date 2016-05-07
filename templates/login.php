@@ -8,6 +8,7 @@
 
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 ?>
+    <div class="main">
     <fieldset>
         <legend> Login </legend>
             <form action="/../WebDevProject/public/index.php?action=processLogin" method="post">
@@ -20,6 +21,7 @@ require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
                 <input type="submit" value="Login">
             </form>
     </fieldset>
+        </div>
 
 
 

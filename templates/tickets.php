@@ -24,8 +24,17 @@ $SLR1A = $SLR1S = $SLR1C = $WY1A = $WY1S = $WY1C = $LT1A = $LT1S = $LT1C =
 }
 ?>
 
-<form action="/../WebDevProject/templates/basketTickets.php" method="post">
-    <table>
+<div class="main">
+
+    <form action="/../WebDevProject/templates/basketTickets.php" method="post">
+        <table>
+            <tr>
+                <th> OPPONENTS </th>
+                <th> DATE </th>
+                <th> ADULT </th>
+                <th> STUDENT/OAP </th>
+                <th> CHILD </th>
+            </tr>
 
         <tr>
             <td> Sligo Rovers </td>
@@ -447,11 +456,12 @@ $SLR1A = $SLR1S = $SLR1C = $WY1A = $WY1S = $WY1C = $LT1A = $LT1S = $LT1C =
 
     </table>
 
-    <br><br>
+        <br><br>
 
-    <input type="submit" value="Add to Basket">
+        <input type="submit" value="Add to Basket">
 
     </form>
 
+</div>
 <?php
 require_once  __DIR__. '/../templates/footer.inc.php';

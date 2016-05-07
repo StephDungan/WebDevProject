@@ -9,6 +9,7 @@
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 ?>
 
+<div class="main">
 <h1>Basket</h1>
 
 <?php
@@ -263,5 +264,11 @@ if($_POST["seaType"] == "seaAdult"){
 }else{
     
 }
+
+?>
+
+    </div>
+
+<?php
 
 require_once __DIR__ . '/../../WebDevProject/templates/footer.inc.php';

@@ -20,6 +20,8 @@ function test_input($data)
 }
 
 ?>
+
+    <div class="main">
 <form action="/../WebDevProject/templates/basket.php" method="get">
     <table>
         <tr>
@@ -183,33 +185,8 @@ function test_input($data)
 
     <input type="submit" name="Add to Basket" align="center">
 </form>
-
-    <table>
-
-        <tr>
-            <th> HOME </th>
-            <th>      </th>
-            <th> AWAY </th>
-        </tr>
-
-        <?php
-            foreach ($kits as $kit)
-            {
-        ?>
-
-            <tr>
-                <td><?= $kit['home'] ?></td>
-                <td><?= $kit['neutral'] ?></td>
-                <td><?= $kit['away'] ?></td>
-            </tr>
-
-        <?php
-
-            }
-        ?>
-
-    </table>
-
+        
+        </div>
 <?php
 
 require_once  __DIR__. '/../../WebDevProject/templates/footer.inc.php';

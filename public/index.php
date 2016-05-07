@@ -19,16 +19,16 @@ $pageHits = 0;
 
 if('kits' == $action)
 {
-    kitsAction();
+    \Itb\kitsAction();
 } elseif ('tickets' == $action)
 {
-    ticketsAction();
-} elseif ('merchendise' == $action)
+    \Itb\ticketsAction();
+} elseif ('merchandise' == $action)
 {
-    merchendiseAction();
+    \Itb\merchandiseAction();
 } elseif ('login' == $action)
 {
-    loginAction();
+    \Itb\loginAction();
 } else
 {
     $mainController->indexAction();
@@ -40,7 +40,6 @@ if (isset($_SESSION['counter']))
 }
 $pageHits++;
 $_SESSION['counter'] = $pageHits;
-print "<p>Counter (number of page hits): $pageHits</p>";
 
 switch ($action)
 {

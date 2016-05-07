@@ -10,8 +10,10 @@
     </style>
 </head>
 <body>
-
+<div id="column_container">
 <header>
+    
+    
     
         <a href="/../WebDevProject/templates/index.php">
             <img src="/../WebDevProject/public/images/BohemianDublin.png" alt="Shop Home" height = "150" width="150">
