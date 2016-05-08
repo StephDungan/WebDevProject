@@ -6,16 +6,14 @@
  * Time: 13:13
  */
 
-if (empty($indexLinkStyle)){
-    $indexLinkStyle = '';
-}
+
 
 if (empty($kitsLinkStyle)){
     $kitsLinkStyle = '';
 }
 
-if (empty($loginLinkStyle)){
-    $loginLinkStyle = '';
+if (empty($infoLinkStyle)){
+    $infoLinkStyle = '';
 }
 
 if (empty($merchandiseLinkStyle)){
@@ -30,12 +28,8 @@ if (empty($ticketsLinkStyle)){
 
 
 
-<nav>
+<div class="adminNav" >
     <ul>
-        <li>
-            <a href="/../WebDevProject/templates/index.php" class="<?= $indexLinkStyle ?>">Home</a>
-        </li>
-
         <li>
             <a href="/../WebDevProject/templates/kits.php" class="<?= $kitsLinkStyle ?>">Kits</a>
         </li>
@@ -49,9 +43,9 @@ if (empty($ticketsLinkStyle)){
         </li>
 
         <li>
-            <a href="/../WebDevProject/templates/login.php" class="<?= $loginLinkStyle ?>">Login</a>
+            <a href="/../WebDevProject/templates/info.php" class="<?= $infoLinkStyle ?>">Info</a>
         </li>
     </ul>
-</nav>
+</div>
 
 <br><br>

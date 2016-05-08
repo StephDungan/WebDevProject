@@ -51,20 +51,36 @@ function indexAction()
 function submitAction()
 {
     $pageTitle = 'BASKET';
-    $listLinkStyle = 'current_page';
+    $submitLinkStyle = 'current_page';
 
     require_once __DIR__ . '/../../WebDevProject/templates/basket.php';
 }
 
+function infoAction()
+{
+    $pageTitle = 'INFO';
+    $infoLinkStyle = 'current_style';
+
+    require_once __DIR__ . '/../../WebDevProject/templates/info.php';
+}
+
+function processLoginAction()
+{
+    $pageTitle = 'ACCOUNT';
+    $accountLinkStyle = 'current_page';
+
+    if ( $username = 'admin')
+    {
+        require_once __DIR__ . '/../../WebDevProject/templates/adminHeader.inc.php';
+    } elseif ( $username = 'Steph'){
+        require_once  __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
+    } else {
+        require_once __DIR__ . '/../../WebDevProject/templates/login.php';
+    }
+}
+
 class MainController
 {
-    public function indexAction()
-    {
-        $isLoggedIn = $this->isLoggedInFromSession();
-        $username = $this->usernameFromSession();
-
-        require_once __DIR__ . '/../templates/index.php';
-    }
 
     public function loginAction()
     {
@@ -98,7 +114,7 @@ class MainController
         if($isLoggedIn == true){
             // success - found a matching username and password
             if($username == 'admin'){
-                require_once __DIR__ . '/../../WebDevProject/templates/admin.php';
+                require_once __DIR__ . '/../../WebDevProject/templates/adminHeader.inc.php';
             } else {
                 require_once __DIR__ . '/../../WebDevProject/templates/loginSuccess.php';
             }
