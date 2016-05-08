@@ -6,5 +6,4 @@
  * Time: 18:48
  */
 
-require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
-require_once __DIR__ . '/../../WebDevProject/templates/leftSideBar.php';
+require_once __DIR__ . '/../../WebDevProject/templates/adminHeader.inc.php';
