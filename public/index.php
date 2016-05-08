@@ -29,10 +29,13 @@ if('kits' == $action)
 } elseif ('login' == $action)
 {
     \Itb\loginAction();
-} else
+} elseif ('index' == $action)
 {
-    $mainController->indexAction();
+    \Itb\indexAction();
+} elseif ('info' == $action){
+    \Itb\infoAction();
 }
+
 
 if (isset($_SESSION['counter']))
 {
@@ -43,10 +46,6 @@ $_SESSION['counter'] = $pageHits;
 
 switch ($action)
 {
-    case 'logout':
-        $mainController->logoutAction();
-        break;
-        
     case 'processLogin':
         $mainController->processLoginAction();
         break;
