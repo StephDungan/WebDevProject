@@ -1,11 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Stephanie Dungan
- * Date: 18/03/2016
- * Time: 11:37
- */
-
+/*
+ *  pulls header1.inc.php file into page
+ * */
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 ?>
     <div class="main">

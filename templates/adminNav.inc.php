@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Steph
- * Date: 19/04/2016
- * Time: 13:13
- */
-
-
-
+/*
+ * calls the appropriate functions for the options selected in the nav bar
+ * */
 if (empty($kitsLinkStyle)){
     $kitsLinkStyle = '';
 }
@@ -26,8 +20,7 @@ if (empty($ticketsLinkStyle)){
 
 ?>
 
-
-
+<!-- list used to provide link options to other pages only used for pages specific to the admin account-->
 <div class="adminNav" >
     <ul>
         <li>
@@ -47,5 +40,3 @@ if (empty($ticketsLinkStyle)){
         </li>
     </ul>
 </div>
-
-<br><br>

@@ -1,34 +1,44 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Steph
- * Date: 18/03/2016
- * Time: 11:37
- */
-
+/*
+ *  declares variables that will be passes into basket pages
+ *      from the forms
+ *  pulls header1.inc.php file into page
+ * */
 $Opponents = $progQTY = $memType = $memQTY  =
     $seaType =  $seaQTYA = $seaQTYS = $seaQTYC ="";
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 ?>
+<!-- start of main class-->
 <div class="main">
-
+    <!-- start of form -->
+    <!-- gives users options to select from and uses post method
+            to pass them through the mainController to the basket page  -->
+    <!-- Each option has a different handle so it can be identified-->
     <form action="/../WebDevProject/templates/basketMerch.php" method="post">
+        <!-- table to display the items -->
+        <!-- table holds three different products with different options for each -->
+        <!-- the user can select multiples of each product -->
         <table>
+            <!-- new row containing product titles -->
             <tr>
                 <td>Match Day Programs</td>
                 <td>Membership</td>
                 <td>Season Ticket</td>
             </tr>
 
+            <!-- new row containing product images-->
             <tr>
                 <td><img src="/../WebDevProject/public/images/program.jpg" height="165" width="117"></td>
                 <td><img src="/../WebDevProject/public/images/MemberTicket.png" height="95" width="117"></td>
                 <td><img src="/../WebDevProject/public/images/SeasonTicket.png" height="95" width="117"></td>
             </tr>
 
+            <!-- new row giving users options on each product such as type and qty-->
             <tr>
                 <td>
                     <select name="Opponents">
+                        <!-- Creates drop down menus-->
+                        <!-- users can select one option from each menu-->
                         <option value="none"> Please select a match</option>
                         <option value="SlR1"> Sligo Rovers 1 </option>
                         <option value="WY1"> Wexford Youths 1 </option>
@@ -59,6 +69,8 @@ require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 
                 <td>
                     <select name="memType">
+                        <!-- Creates drop down menus-->
+                        <!-- users can select one option from each menu-->
                         <option value="mem--"> -- </option>
                         <option value="memAdult"> Adult </option>
                         <option value="memStudent"> Student </option>
@@ -76,6 +88,8 @@ require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 
                 <td>
                     <select name="seaType">
+                        <!-- Creates drop down menus-->
+                        <!-- users can select one option from each menu-->
                         <option value="sea--"> -- </option>
                         <option value="seaAdult"> Adult </option>
                         <option value="seaStudent"> Student </option>
@@ -92,10 +106,20 @@ require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
                 </td>
             </tr>
         </table>
+        <!-- end of table-->
+
+        <br>
 
         <input type="submit" value="Add to Basket">
+        <!-- submit button -->
+        <!-- passes information to /basketMerch.php -->
     </form>
-
+    <!-- end of form -->
 </div>
+    <!-- end of main class-->
 <?php
+/*
+ *  restarting php
+ *  bringing in footer to the page
+ * */
 require_once  __DIR__. '/../../WebDevProject/templates/footer.inc.php';

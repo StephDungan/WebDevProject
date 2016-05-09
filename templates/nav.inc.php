@@ -1,11 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Steph
- * Date: 19/04/2016
- * Time: 13:13
- */
-
+/*
+ * calls the appropriate functions for the options selected in the nav bar
+ * */
 if (empty($indexLinkStyle)){
     $indexLinkStyle = '';
 }
@@ -28,8 +24,7 @@ if (empty($ticketsLinkStyle)){
 
 ?>
 
-
-
+<!-- nav list used to provide link options to other pages -->
 <nav>
     <ul>
         <li>
@@ -53,5 +48,3 @@ if (empty($ticketsLinkStyle)){
         </li>
     </ul>
 </nav>
-
-<br><br>
