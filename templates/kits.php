@@ -1,29 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Stephanie Dungan
- * Date: 18/03/2016
- * Time: 11:41
- */
-
+/*
+ *  declares variables that will be passes into basket pages
+ *      from the forms
+ *  pulls header1.inc.php file into page
+ * */
 require_once __DIR__ . '/../../WebDevProject/templates/header1.inc.php';
 
 $gender00 = $gender01 = $size00 = $size01 = $gender10 = $gender11
     = $size10 = $HorA = $SockSH = $kits = "";
-
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripcslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
 ?>
-
+    <!-- start of main class-->
 <div class="main">
-    <form action="/../WebDevProject/templates/basket.php" method="get">
+    <!-- start of form -->
+    <!-- gives users options to select from and uses post method
+            to pass them through the mainController to the basket page  -->
+    <!-- Each option has a different handle so it can be identified-->
+    <form action="/../WebDevProject/templates/basket.php" method="post">
+        <!-- table to display the items -->
+        <!-- table holds three different products with different options for each -->
+        <!-- the user can select multiples of each product -->
         <table>
+            <!-- new row containing headings -->
             <tr>
                 <th> HOME </th>
                 <th>      </th>
@@ -31,12 +28,14 @@ function test_input($data)
 
             </tr>
 
+            <!-- new row containing headings of product descriptions-->
             <tr>
                 <th>        </th>
                 <th> JERSEYS </th>
                 <th>        </th>
             </tr>
 
+            <!-- new row containing product images-->
             <tr>
                 <td><img src="/../WebDevProject/public/images/homeShirt.jpg" height="170" width="170" ></td>
 
@@ -45,6 +44,7 @@ function test_input($data)
                 <td><img src="/../WebDevProject/public/images/awayShirt.jpg" height="170" width="170"></td>
             </tr>
 
+            <!-- new row giving usersa gender option on each product-->
             <tr>
                 <td>Gender:
                     <select name="gender00">
@@ -65,6 +65,7 @@ function test_input($data)
                 </td>
             </tr>
 
+            <!-- new row giving users a size option on each product-->
             <tr>
                 <td>
                     Size:
@@ -77,8 +78,7 @@ function test_input($data)
                 </td>
 
                 <td></td>
-
-
+                
                 <td>
                     Size:
                     <select name="size01">
@@ -90,12 +90,14 @@ function test_input($data)
                 </td>
             </tr>
 
+            <!-- new row containing headings of product descriptions-->
             <tr>
                 <th>        </th>
                 <th> SHORTS </th>
                 <th>        </th>
             </tr>
 
+            <!-- new row containing product images-->
             <tr>
                 <td><img src="/../WebDevProject/public/images/homeShorts.jpg" height="170" width="170" ></td>
 
@@ -104,6 +106,7 @@ function test_input($data)
                 <td><img src="/../WebDevProject/public/images/awayShorts.jpg" height="170" width="170"></td>
             </tr>
 
+            <!-- new row giving users a gender option on each product-->
             <tr>
                 <td>Gender:
                     <select name="gender10">
@@ -125,6 +128,7 @@ function test_input($data)
                 </td>
             </tr>
 
+            <!-- new row giving users a size option on each product-->
             <tr>
                 <td>
                     Size:
@@ -150,12 +154,14 @@ function test_input($data)
                 </td>
             </tr>
 
+            <!-- new row containing headings of product descriptions-->
             <tr>
                 <th>        </th>
                 <th> SOCKS </th>
                 <th>        </th>
             </tr>
 
+            <!-- new row containing product images-->
             <tr>
 
                 <td></td>
@@ -165,6 +171,7 @@ function test_input($data)
                 <td></td>
             </tr>
 
+            <!-- new row giving users a type option-->
             <tr>
 
                 <td></td>
@@ -179,6 +186,7 @@ function test_input($data)
                 <td></td>
             </tr>
 
+            <!-- new row giving users a size option on each product-->
             <tr>
 
                 <td></td>
@@ -199,12 +207,20 @@ function test_input($data)
                 <td></td>
             </tr>
         </table>
+        <!-- end of table-->
 
-        <br><br>
+        <br>
 
         <input type="submit" value="Add to Basket">
+        <!-- submit button -->
+        <!-- passes information to /basketMerch.php -->
     </form>
+    <!-- end of form -->
 </div>
+    <!-- end of main class-->
 <?php
-
+/*
+ *  restarting php
+ *  bringing in footer to the page
+ * */
 require_once  __DIR__. '/../../WebDevProject/templates/footer.inc.php';

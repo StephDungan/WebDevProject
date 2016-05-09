@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Bohemian FC Club Shop - <?= $pageTitle ?></title>
+    <title>Bohemian FC Club Shop ADMIN</title>
 <meta charset="utf-8">
 <style>
     @import "/../WebDevProject/public/css/basic.css";
@@ -12,7 +12,10 @@
 </head>
 <body>
 <div id="column_container">
+<!-- start of column_container-->
     <header>
+        <!-- page heading -->
+        <!-- displays image and turns it into a link for the home page of the site-->
 
         <a href="/../WebDevProject/templates/index.php">
             <img src="/../WebDevProject/public/images/BohemianDublin.png" alt="Shop Home" height = "150" width="150">
@@ -21,17 +24,15 @@
     </header>
 
 <?php
-    
+    /*
+     * restarts php to import adminNav.inc.php for admin nav bar
+     * */
     require_once __DIR__ . '/../../WebDevProject/templates/adminNav.inc.php';
 ?>
+    
+    <!-- sets up the necessary html settings -->
+    <!-- displays page title -->
+    <!-- imports style sheets -->
 
-    <div class="main">
-
-        Welcome back to the admin account
-
-    </div>
-
-<?php
-
-
-require_once __DIR__ . '/../../WebDevProject/templates/footer.inc.php';
+    <!-- only for use with admin specific pages -->
+    

@@ -23,11 +23,12 @@ header
 #column_container .main
 {
     border: groove #B2B2B3 5px;
-    background-color: #B2B2B3;
+    background-color: #FFEFEF;
     text-align: center;
     font-weight: bold;
     font-family: Century;
     align-items: center;
+    height: 1000px;
 }
 
 #column_container .main .table1
@@ -87,6 +88,17 @@ header
 }
 
 #column_container .main ul a:visited
+{
+    text-decoration: none;
+}
+
+#column_container .main a
+{
+    color: #E80000;
+    text-decoration: none;
+}
+
+#column_container .main a:visited
 {
     text-decoration: none;
 }
